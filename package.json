@@ -1,0 +1,14 @@
+{
+    "dependencies": {
+        "@nestjs/config": "^3.3.0",
+        "@nestjs/mongoose": "^10.1.0",
+        "@nestjs/serve-static": "^4.0.2",
+        "class-validator": "^0.14.1",
+        "mongoose": "^8.8.1"
+    },
+    "devDependencies": {
+        "@nestjs/testing": "^10.4.8",
+        "@types/jest": "^29.5.14",
+        "@types/mongoose": "^5.11.97"
+    }
+}

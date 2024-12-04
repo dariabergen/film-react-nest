@@ -1,8 +1,8 @@
-import { Controller, Get, Param } from '@nestjs/common';
+import { Controller, Get, Param, Post, Body } from '@nestjs/common';
 import { FilmsService } from './films.service';
 
 @Controller('films')
-export class MovieController {
+export class FilmsController {
   constructor(private readonly filmsDatabase: FilmsService) {}
 
   @Get()

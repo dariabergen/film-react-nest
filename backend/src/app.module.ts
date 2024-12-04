@@ -1,16 +1,16 @@
-// src/app.module.ts
 import { Module } from '@nestjs/common';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import { ConfigModule } from '@nestjs/config';
 import * as path from 'node:path';
 import { ConfigProvider } from './app.config.provider';
-import { DbModule } from './database/dbase.module';
-import { MovieProvider } from './films/films.provider';
-import { MovieRepository } from './repository/films.repository';
-import { MovieController } from './films/films.controller';
+import { DatabaseModule } from './database/dbase.module';
+import { FilmsProvider } from './films/films.provider';
+import { FilmsRepositoryMongo } from './repository/filmsMongo.repository';
+import { FilmsController } from './films/films.controller';
 import { OrderController } from './order/order.controller';
 import { FilmsService } from './films/films.service';
 import { OrderService } from './order/order.service';
+import { FilmsRepositoryPostgres } from './repository/filmsPostgres.repository';
 
 @Module({
   imports: [
@@ -22,13 +22,14 @@ import { OrderService } from './order/order.service';
       rootPath: path.join(__dirname, '..', 'public'),
       renderPath: '/content/afisha/',
     }),
-    DbModule,
+    DatabaseModule,
   ],
-  controllers: [MovieController, OrderController],
+  controllers: [FilmsController, OrderController],
   providers: [
     ConfigProvider,
-    MovieProvider,
-    MovieRepository,
+    FilmsProvider,
+    FilmsRepositoryMongo,
+    FilmsRepositoryPostgres,
     FilmsService,
     OrderService,
   ],

@@ -6,4 +6,4 @@ import { DatabaseProvider } from './dbase.provider';
   providers: [ConfigProvider, DatabaseProvider],
   exports: [DatabaseProvider],
 })
-export class DbModule {}
+export class DatabaseModule {}
